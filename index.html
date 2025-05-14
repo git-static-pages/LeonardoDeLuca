@@ -43,7 +43,11 @@
 						<footer>
 							<ul class="items">
 								<li>
-									<h3><a href="mailto:studio@romanotaio.it?subject=Il Notaio Risponde&body=" class="icon solid alt fa-envelope"> Email</a></h3>
+									<button type="button" onclick="vaiAllaMail()">Scrivici</button>
+								</li>
+								<li>
+									<h3><a href="./mail.html" class="icon solid alt fa-envelope"> Email</a></h3>
+									<!-- <h3><a href="mailto:studio@romanotaio.it?subject=Il Notaio Risponde&body=" class="icon solid alt fa-envelope"> Email</a></h3> -->
 									<a href="mailto:studio@romanotaio.it?subject=Il Notaio Risponde&body=">studio@romanotaio.it</a>
 									
 								</li>
@@ -78,6 +82,11 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				function vaiAllaMail() {
+					window.location.href = "mail.html"; 
+				}
+				</script>
 
 	</body>
 </html>

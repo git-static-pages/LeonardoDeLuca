@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Leonardo De Luca | Notaio</title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        input, textarea, button {
+            padding: 10px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Il Notaio Risponde</h1>
+
+    <form>
+        <label for="oggetto">Telefono *</label>
+        <input type="text" id="telefono" name="telefono" value="+39 " required>
+        
+        <label for="oggetto">Oggetto *</label>
+        <input type="text" id="oggetto" name="oggetto" value="Il Notaio Risponde" required>
+
+
+        <label for="descrizione">Messaggio</label>
+        <textarea id="descrizione" name="descrizione"></textarea>
+
+        <button type="button" onclick="inviaEmail()">Invia</button>
+        <button type="button" onclick="vaiAllaHome()">Annulla</button>
+
+    </form>
+    
+
+    <script>
+        function inviaEmail() {
+            let emailDestinatario = "studio@romanotaio.it"; // Indirizzo destinatario
+            // let emailUtente = document.getElementById("email").value;
+            let oggetto = document.getElementById("oggetto").value;
+            let descrizione = document.getElementById("descrizione").value;
+            let telefono = document.getElementById("telefono").value;
+        
+            if (oggetto) {
+                let mailtoLink = `mailto:${emailDestinatario}?subject=${encodeURIComponent(oggetto)}&body=${encodeURIComponent(descrizione + "\n\nTelefono: " + telefono)}`;
+                window.location.href = mailtoLink;
+            } else {
+                alert("Si prega di compilare i campi obbligatori.");
+            }
+        }
+        </script>
+        <script>
+            function vaiAllaHome() {
+                window.location.href = "index.html"; // Cambia con l'URL corretto della tua home
+            }
+            </script>
+            
+
+</body>
+</html>
